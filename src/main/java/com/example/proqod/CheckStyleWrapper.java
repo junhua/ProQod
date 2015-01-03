@@ -1,12 +1,12 @@
-package com.google.training.helloworld;
+package com.example.proqod;
 
-public class HelloClass {
+public class CheckStyleWrapper {
     public String message = "Hello World";
 
-    public HelloClass () {
+    public CheckStyleWrapper () {
     }
 
-    public HelloClass (String name) {
+    public CheckStyleWrapper (String name) {
         this.message = "Hello " + name + "!";
     }
 
