@@ -28,7 +28,7 @@
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-endpoints</artifactId>
-            <version>1.9.17</version>
+            <version>1.9.17a</version>
         </dependency>
         <dependency>
             <groupId>jstl</groupId>
@@ -40,13 +40,13 @@
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-testing</artifactId>
-            <version>1.9.17</version>
+            <version>1.9.17a</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-stubs</artifactId>
-            <version>1.9.17</version>
+            <version>1.9.17a</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -82,7 +82,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.4</version>
+                <version>2.5</version>
                 <configuration>
                     <archiveClasses>true</archiveClasses>
                     <webResources>
