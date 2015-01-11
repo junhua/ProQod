@@ -39,21 +39,22 @@ function loadCallback () {
 }
 
 function enableButtons () {
-	// Set the onclick action for the first button
-	btn = document.getElementById("input_greet_generically");
-	btn.onclick= function(){greetGenerically();};
-	
-	// Update the button label now that the button is active
-	btn.value="Click me for a generic greeting";
-	
-	// Set the onclick action for the second button
-	btn = document.getElementById("input_greet_by_name");
-	btn.onclick=function(){greetByName();};
-	
-	// Update the button label now that the button is active
-	btn.value="Click me for a personal greeting";
+//	// Set the onclick action for the first button
+//	btn = document.getElementById("input_greet_generically");
+//	btn.onclick= function(){greetGenerically();};
+//	
+//	// Update the button label now that the button is active
+//	btn.value="Click me for a generic greeting";
+//	
+//	// Set the onclick action for the second button
+//	btn = document.getElementById("input_greet_by_name");
+//	btn.onclick=function(){greetByName();};
+//	
+//	// Update the button label now that the button is active
+//	btn.value="Click me for a personal greeting";
 	
 	btn = document.getElementById("btn_submit");
+	btn.value="Submit";
 	btn.onclick=function(){codeChecking();};
 	
 }
@@ -76,7 +77,6 @@ function greetGenerically () {
  */
 function greetByName () {
 	
-//	document.getElementById('outputform').value = 'REMOVED';
 	
 	// Get the name from the name_field element
 	var name = document.getElementById("name_field").value;
@@ -90,7 +90,8 @@ function greetByName () {
 }
 
 function codeChecking() {
-	document.getElementById("outputform").value = "REMOVED";
+	var source = document.getElementById("inputform").value;
+	document.getElementById("outputform").value = source;
 }
 
 // Process the JSON response
