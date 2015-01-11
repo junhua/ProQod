@@ -52,6 +52,10 @@ function enableButtons () {
 	
 	// Update the button label now that the button is active
 	btn.value="Click me for a personal greeting";
+	
+	btn = document.getElementById("btn_submit");
+	btn.onclick=function(){codeChecking();};
+	
 }
 
 /*
@@ -71,6 +75,9 @@ function greetGenerically () {
  * Illustrates calling an endpoints function that takes an argument.
  */
 function greetByName () {
+	
+//	document.getElementById('outputform').value = 'REMOVED';
+	
 	// Get the name from the name_field element
 	var name = document.getElementById("name_field").value;
 	
@@ -79,6 +86,11 @@ function greetByName () {
 	// On success, pass the response to sayHelloCallback()
 	var request = gapi.client.helloworldendpoints.sayHelloByName({'name': name});
 	request.execute(sayHelloCallback);
+	
+}
+
+function codeChecking() {
+	document.getElementById("outputform").value = "REMOVED";
 }
 
 // Process the JSON response

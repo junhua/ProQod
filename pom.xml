@@ -5,20 +5,11 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
-<<<<<<< HEAD
-    <groupId>proqod</groupId>
-    <artifactId>proqod</artifactId>
-
-    <properties>
-        <appengine.app.version>1</appengine.app.version>
-        <appengine.target.version>1.9.3</appengine.target.version>
-=======
     <groupId>com.google.training.helloworld</groupId>
     <artifactId>helloworld</artifactId>
 
     <properties>
         <appengine.app.version>1</appengine.app.version>
->>>>>>> 8b540fea98686958109541995a381cc8ec23373d
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -31,23 +22,11 @@
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
-<<<<<<< HEAD
-            <version>1.9.17a</version>
-=======
             <version>1.9.4</version>
->>>>>>> 8b540fea98686958109541995a381cc8ec23373d
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-endpoints</artifactId>
-<<<<<<< HEAD
-            <version>1.9.17</version>
-        </dependency>
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-=======
             <version>1.9.4</version>
         </dependency>
         <dependency>
@@ -60,16 +39,10 @@
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
             <version>1</version>
->>>>>>> 8b540fea98686958109541995a381cc8ec23373d
         </dependency>
 
         <!-- Test Dependencies -->
         <dependency>
-<<<<<<< HEAD
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-testing</artifactId>
-            <version>1.9.17</version>
-=======
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
@@ -79,17 +52,12 @@
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-testing</artifactId>
             <version>1.9.4</version>
->>>>>>> 8b540fea98686958109541995a381cc8ec23373d
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-stubs</artifactId>
-<<<<<<< HEAD
-            <version>1.9.17</version>
-=======
             <version>1.9.4</version>
->>>>>>> 8b540fea98686958109541995a381cc8ec23373d
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -97,32 +65,10 @@
     <build>
         <!-- for hot reload of the web application-->
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
-<<<<<<< HEAD
-        
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.1</version>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>display-dependency-updates</goal>
-                            <goal>display-plugin-updates</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <version>3.2</version>
-=======
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <version>3.1</version>
->>>>>>> 8b540fea98686958109541995a381cc8ec23373d
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>1.7</source>
@@ -134,15 +80,6 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-<<<<<<< HEAD
-                    <archiveClasses>true</archiveClasses>
-                    <webResources>
-                        <!-- in order to interpolate version from pom into appengine-web.xml -->
-                        <resource>
-                            <directory>${basedir}/src/main/webapp/WEB-INF</directory>
-                            <filtering>true</filtering>
-                            <targetPath>WEB-INF</targetPath>
-=======
                     <webXml>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF/web.xml</webXml>
                     <webResources>
                         <resource>
@@ -153,23 +90,14 @@
                                 <include>WEB-INF/*.discovery</include>
                                 <include>WEB-INF/*.api</include>
                             </includes>
->>>>>>> 8b540fea98686958109541995a381cc8ec23373d
                         </resource>
                     </webResources>
                 </configuration>
             </plugin>
-<<<<<<< HEAD
-
-            <plugin>
-                <groupId>com.google.appengine</groupId>
-                <artifactId>appengine-maven-plugin</artifactId>
-                <version>1.9.17</version>
-=======
             <plugin>
                 <groupId>com.google.appengine</groupId>
                 <artifactId>appengine-maven-plugin</artifactId>
                 <version>1.9.4</version>
->>>>>>> 8b540fea98686958109541995a381cc8ec23373d
                 <configuration>
                     <enableJarClasses>false</enableJarClasses>
                     <!-- Comment in the below snippet to bind to all IPs instead of just localhost -->
@@ -180,13 +108,6 @@
                     <!-- jvmFlags>
                       <jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n</jvmFlag>
                     </jvmFlags -->
-<<<<<<< HEAD
-                </configuration>
-            </plugin>
-        </plugins>
-        
-    </build>
-=======
                 </configuration>                
                 <executions>
                     <execution>
@@ -200,5 +121,4 @@
         </plugins>
     </build>
 
->>>>>>> 8b540fea98686958109541995a381cc8ec23373d
 </project>

@@ -1,12 +1,12 @@
-package com.example.proqod;
+package com.proqod.engine;
 
-public class CheckStyleWrapper {
+public class HelloClass {
     public String message = "Hello World";
 
-    public CheckStyleWrapper () {
+    public HelloClass () {
     }
 
-    public CheckStyleWrapper (String name) {
+    public HelloClass (String name) {
         this.message = "Hello " + name + "!";
     }
 
