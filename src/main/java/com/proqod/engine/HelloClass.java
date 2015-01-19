@@ -1,7 +1,7 @@
 package com.proqod.engine;
 
 public class HelloClass {
-    public String message = "Hello World 234";
+    public String message = "Hello World";
 
     public HelloClass () {
     }
