@@ -29,5 +29,6 @@ public class ProQodEndpoints {
 
     public HelloClass sayHelloByName (@Named("name") String name) {
         return new HelloClass(name);
+    	
     }
 }
