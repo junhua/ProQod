@@ -10,19 +10,24 @@
 
     <properties>
         <appengine.app.version>1</appengine.app.version>
+        <tools.jar.version>1.7.0</tools.jar.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<projectVersion>${project.version}</projectVersion>
+    	<maven.site.plugin.version>3.4</maven.site.plugin.version>
+    	<tools.jar.path>${java.home}/../lib/tools.jar</tools.jar.path>
+    	<java.version>1.7</java.version>
     </properties>
 
     <prerequisites>
         <maven>3.1.0</maven>
     </prerequisites>
-
+	
     <dependencies>
         <!-- Compile/runtime dependencies -->
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>1.9.15</version>
+            <version>1.9.3</version>
         </dependency>
         <dependency>
             <groupId>antlr</groupId>
@@ -78,14 +83,19 @@
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-testing</artifactId>
-            <version>1.9.4</version>
+            <version>1.9.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-stubs</artifactId>
-            <version>1.9.4</version>
+            <version>1.9.3</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+        	<groupId>org.apache.ant</groupId>
+        	<artifactId>ant</artifactId>
+        	<version>1.7.0</version>
         </dependency>
     </dependencies>
 
@@ -184,5 +194,44 @@
         	</plugins>
         </pluginManagement>
     </build>
-
+    <!-- Bring in tools.jar for platforms which provide it
+    that is required for javadoc docklets that are in use -->
+   	<profiles>
+	   	<profile>
+	      <id>tools.jar-sun</id>
+	      <activation>
+	        <property>
+	          <name>java.vendor</name>
+	          <value>Sun Microsystems Inc.</value>
+	        </property>
+	      </activation>
+	      <dependencies>
+	        <dependency>
+	          <groupId>com.sun</groupId>
+	          <artifactId>tools</artifactId>
+	          <version>${tools.jar.version}</version>
+	          <scope>system</scope>
+	          <systemPath>${tools.jar.path}</systemPath>
+	        </dependency>
+	      </dependencies>
+	    </profile>
+	    <profile>
+	      <id>default-tools.jar-oracle</id>
+	      <activation>
+	        <property>
+	          <name>java.vendor</name>
+	          <value>Oracle Corporation</value>
+	        </property>
+	      </activation>
+	      <dependencies>
+	        <dependency>
+	          <groupId>com.sun</groupId>
+	          <artifactId>tools</artifactId>
+	          <version>${tools.jar.version}</version>
+	          <scope>system</scope>
+	          <systemPath>${tools.jar.path}</systemPath>
+	        </dependency>
+	      </dependencies>
+	    </profile>
+	</profiles>
 </project>
