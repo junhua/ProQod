@@ -85,21 +85,27 @@ function greetByName () {
 	// It takes one argument "name"
 	// On success, pass the response to sayHelloCallback()
 	var request = gapi.client.helloworldendpoints.sayHelloByName({'name': name});
-	request.execute(sayHelloCallback);
+	request.execute(sayHelloCallback);       
 	
 }
 
 function codeChecking() {
 	var source = document.getElementById("inputform").value;
-	document.getElementById("outputform").value = source;
+	var request = gapi.client.helloworldendpoints.sayHelloByName({'name': source});
+	request.execute(codeCheckingCallback); 
 }
+
 
 // Process the JSON response
 // In this case, just show an alert dialog box
 // displaying the value of the message field in the response
-function sayHelloCallback (response) {
-	alert(response.r);	
-}
 
+function sayHelloCallback (response) {
+	alert(response.output);	  
+} 
+  
+function codeCheckingCallback(response) {
+	document.getElementById("outputform").value = response.output; 
+}
 
 
