@@ -19,8 +19,8 @@ public class ProQodEndpoints {
     @ApiMethod(name = "sayHello", path = "sayHello",
             httpMethod = HttpMethod.GET)
 
-    public HelloClass sayHello() {
-        return new HelloClass();
+    public CodeChecker sayHello() {
+        return new CodeChecker();
     }
 
     // Declare this method as a method available externally through Endpoints
