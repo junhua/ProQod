@@ -1,13 +1,13 @@
 package com.proqod.engine;
 
 public class CodeChecker {
-    public String output = "NONE";
+    public String output = "NON E";
 
     public CodeChecker () {
     }
 
     public CodeChecker (String name) {
-        this.output = "[added] " + name + "!";
+        this.output = "[a dded] " + name + "!";
     }
 
     public String getResult() {

@@ -31,4 +31,13 @@ public class ProQodEndpoints {
         return new CodeChecker(name);
     	
     }
+    
+ // Declare this method as a method available externally through Endpoints
+    @ApiMethod(name = "getCodeChecking", path = "getCodeChecking",
+            httpMethod = HttpMethod.GET)
+
+    public CodeChecker getCodeChecking (@Named("code") String code) {
+        return new CodeChecker(code);
+    	
+    }
 }

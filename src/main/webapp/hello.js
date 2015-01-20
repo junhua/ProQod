@@ -76,8 +76,6 @@ function greetGenerically () {
  * Illustrates calling an endpoints function that takes an argument.
  */
 function greetByName () {
-	
-	
 	// Get the name from the name_field element
 	var name = document.getElementById("name_field").value;
 	
@@ -89,9 +87,13 @@ function greetByName () {
 	
 }
 
+/*
+ * Execute a request to the getCodeChecking() endpoints function.
+ * Illustrates calling an endpoints function that takes an argument.
+ */
 function codeChecking() {
 	var source = document.getElementById("inputform").value;
-	var request = gapi.client.helloworldendpoints.sayHelloByName({'name': source});
+	var request = gapi.client.helloworldendpoints.getCodeChecking({'code': source});
 	request.execute(codeCheckingCallback); 
 }
 
@@ -105,7 +107,7 @@ function sayHelloCallback (response) {
 } 
   
 function codeCheckingCallback(response) {
-	document.getElementById("outputform").value = response.output; 
+	document.getElementById("outputform").value = response.output;  
 }
 
 
