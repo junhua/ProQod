@@ -3,6 +3,7 @@ com/puppycrawl/tools/checkstyle/checks/coding/ArrayTrailingCommaCheck.class
 com/puppycrawl/tools/checkstyle/api/DetailNode.class
 com/puppycrawl/tools/checkstyle/checks/indentation/ObjectBlockHandler.class
 com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocPackageCheck.class
+com/proqod/engine/CodeChecker.class
 com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheck.class
 com/puppycrawl/tools/checkstyle/checks/indentation/CatchHandler.class
 com/puppycrawl/tools/checkstyle/checks/naming/AbstractAccessControlNameCheck.class

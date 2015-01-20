@@ -27,8 +27,8 @@ public class ProQodEndpoints {
     @ApiMethod(name = "sayHelloByName", path = "sayHelloByName",
             httpMethod = HttpMethod.GET)
 
-    public HelloClass sayHelloByName (@Named("name") String name) {
-        return new HelloClass(name);
+    public CodeChecker sayHelloByName (@Named("name") String name) {
+        return new CodeChecker(name);
     	
     }
 }

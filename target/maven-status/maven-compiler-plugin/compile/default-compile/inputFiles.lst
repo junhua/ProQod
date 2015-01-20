@@ -267,6 +267,7 @@
 /Users/liujunhua/workspace/proqod/src/main/java/com/puppycrawl/tools/checkstyle/grammars/javadoc/JavadocParserVisitor.java
 /Users/liujunhua/workspace/proqod/src/main/java/com/puppycrawl/tools/checkstyle/checks/blocks/EmptyBlockCheck.java
 /Users/liujunhua/workspace/proqod/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/NoWhitespaceAfterCheck.java
+/Users/liujunhua/workspace/proqod/src/main/java/com/proqod/engine/CodeChecker.java
 /Users/liujunhua/workspace/proqod/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/OneTopLevelClassCheck.java
 /Users/liujunhua/workspace/proqod/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/MatchSuppressor.java
 /Users/liujunhua/workspace/proqod/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/FileTabCharacterCheck.java

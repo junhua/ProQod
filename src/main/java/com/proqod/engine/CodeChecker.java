@@ -1,16 +1,16 @@
 package com.proqod.engine;
 
 public class CodeChecker {
-    public String result = "Hello World";
+    public String r = "Hello Sunardi";
 
     public CodeChecker () {
     }
 
-    public CodeChecker (String code) {
-        this.result = "Hello " + code + "!";
+    public CodeChecker (String name) {
+        this.r = "Hello Sunardi " + name + "!";
     }
 
     public String getResult() {
-        return result;
+        return r;
     }
 }
