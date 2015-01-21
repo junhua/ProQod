@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,8 +14,11 @@ import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
+import org.apache.commons.cli.PosixParser;
 
 import com.google.common.collect.Lists;
 import com.puppycrawl.tools.checkstyle.Checker;
@@ -26,6 +31,7 @@ import com.puppycrawl.tools.checkstyle.api.AuditListener;
 import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
 import com.puppycrawl.tools.checkstyle.api.Configuration;
 import com.puppycrawl.tools.checkstyle.api.Utils;
+import com.sun.tools.internal.ws.wsdl.parser.W3CAddressingExtensionHandler;
 
 public class CodeChecker {
     public String output = "NON E";
@@ -52,18 +58,92 @@ public class CodeChecker {
     
     public String PerformChecking(String code){
     	
+//    	
+////    	// Checkstyle Integration
+////    	
+////    	System.out.println("[DEBUG] arguments: ");
+//    	String [] aArgs = new String[3];
+//    	aArgs[0] = "-c";
+//    	aArgs[1] = "/sun_checks.xml";
+//    	aArgs[2] = "/Users/sunardi/Desktop/HW5_BonusQ.java";
+////    	
+//    	// parse the parameters
+//        final CommandLineParser clp = new PosixParser();
+//        CommandLine line = null;
+//        try {
+//            line = clp.parse(OPTS, aArgs);
+//        }
+//        catch (final ParseException e) {
+//            e.printStackTrace();
+//            usage();
+//        }
+//        assert line != null;
+//
+//       
+    	String tempString=null;
+        BufferedReader br = null;
+		 
+		try {
+ 
+			String sCurrentLine;
+ 
+			br = new BufferedReader(new FileReader("/sun_checks.xml"));
+ 
+			while ((sCurrentLine = br.readLine()) != null) {
+				System.out.println(sCurrentLine);
+				tempString = tempString + sCurrentLine;
+			}
+ 
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (br != null)br.close();
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
+		}
+//        
+        // setup the properties
+//        final Properties props =
+//            line.hasOption("p")
+//                ? loadProperties(new File(line.getOptionValue("p")))
+//                : System.getProperties();
+        
+                
+
+//        final String errorResult = loadConfig(line, props);
+            
+                
+//        final Configuration config = loadConfig(line, props);
+        
+//
+//        // setup the output stream
+//        OutputStream out = null;
+//        boolean closeOut = false;
+//        if (line.hasOption("o")) {
+//            final String fname = line.getOptionValue("o");
+//            try {
+//                out = new FileOutputStream(fname);
+//                closeOut = true;
+//            }
+//            catch (final FileNotFoundException e) {
+//                System.out.println("Could not find file: '" + fname + "'");
+//                System.exit(1);
+//            }
+//        }
+//        else {
+//            out = System.out;
+//            closeOut = false;
+//        }
+//        
+//        final AuditListener listener = createListener(line, out, closeOut);
+//        final List<File> files = getFilesToProcess_String_To_File(code);
+//        
+//    	
     	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	return "[added] " + code + "!";
+
+    	return "[debug1] " + code + " " + tempString + " "+  "!";
     }
 
     public String getResult() {
@@ -104,15 +184,14 @@ public class CodeChecker {
      * Creates List of files - java.io.File objects to process
      * 
      */
-    private static List<File> getFilesToProcess_String_To_File(CommandLine aLine)
+    private static List<File> getFilesToProcess_String_To_File(String code)
     {
     	final List<File> files = Lists.newLinkedList();
-        final String[] remainingArgs = aLine.getArgs();
+//    	File file = new File("source.java");
+    	File file = new File("test.java");
         
         try{
     		String data = " This content will append to the end of the file";
- 
-    		File file =new File("javaio-appendfile.txt");
  
     		//if file doesnt exists, then create it
     		if(!file.exists()){
@@ -121,15 +200,19 @@ public class CodeChecker {
  
     		//true = append file
     		FileWriter fileWritter = new FileWriter(file.getName(),true);
-    	        BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
-    	        bufferWritter.write(data);
-    	        bufferWritter.close();
+    		BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
+	        
+	        bufferWritter.write(code);
+	        bufferWritter.close();
  
 	        System.out.println("Done");
  
     	}catch(IOException e){
     		e.printStackTrace();
     	}
+        
+        files.add(file);
+        
         return files;
     }
     
@@ -228,21 +311,39 @@ public class CodeChecker {
      * @param aProps the properties to resolve with the configuration
      * @return a fresh new configuration
      */
-    private static Configuration loadConfig(CommandLine aLine,
-                                            Properties aProps)
-    {
-        try {
-            return ConfigurationLoader.loadConfiguration(
-                    aLine.getOptionValue("c"), new PropertiesExpander(aProps));
-        }
-        catch (final CheckstyleException e) {
-            System.out.println("Error loading configuration file");
-            e.printStackTrace(System.out);
-            System.exit(1);
-            return null; // can never get here
-        }
-    }
-
+//    private static Configuration loadConfig(CommandLine aLine,
+//                                            Properties aProps)
+//    {
+//        try {
+//            return ConfigurationLoader.loadConfiguration(
+//                    aLine.getOptionValue("c"), new PropertiesExpander(aProps));
+//        }
+//        catch (final CheckstyleException e) {
+//            System.out.println("Error loading configuration file");
+//            e.printStackTrace(System.out);
+//            System.exit(1);
+//            return null; // can never get here
+//        }
+//    }
+    private static String loadConfig(CommandLine aLine,
+            Properties aProps)
+	{
+		try {
+			
+			Configuration anew =  ConfigurationLoader.loadConfiguration(
+					aLine.getOptionValue("c"), new PropertiesExpander(aProps));
+			return "Sucess";
+			
+		}
+//			catch (final CheckstyleException e) {
+		catch (final Exception e) {
+//				System.out.println("Error loading configuration file");
+//				e.printStackTrace(System.out);
+//				System.exit(1);
+				return e.getMessage(); // can never get here
+	}
+}
+    
     /** Prints the usage information. **/
     private static void usage()
     {
