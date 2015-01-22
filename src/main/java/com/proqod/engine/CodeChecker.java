@@ -34,7 +34,7 @@ import com.puppycrawl.tools.checkstyle.api.Utils;
 import com.sun.tools.internal.ws.wsdl.parser.W3CAddressingExtensionHandler;
 
 public class CodeChecker {
-    public String output = "NON E";
+    public String output = "default message";
     
     /** the options to the command line */
     private static final Options OPTS = new Options();
@@ -80,29 +80,29 @@ public class CodeChecker {
 //        assert line != null;
 //
 //       
-    	String tempString=null;
-        BufferedReader br = null;
-		 
-		try {
- 
-			String sCurrentLine;
- 
-			br = new BufferedReader(new FileReader("/sun_checks.xml"));
- 
-			while ((sCurrentLine = br.readLine()) != null) {
-				System.out.println(sCurrentLine);
-				tempString = tempString + sCurrentLine;
-			}
- 
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (br != null)br.close();
-			} catch (IOException ex) {
-				ex.printStackTrace();
-			}
-		}
+//    	String tempString=null;
+//        BufferedReader br = null;
+//		 
+//		try {
+// 
+//			String sCurrentLine;
+// 
+//			br = new BufferedReader(new FileReader("/sun_checks.xml"));
+// 
+//			while ((sCurrentLine = br.readLine()) != null) {
+//				System.out.println(sCurrentLine);
+//				tempString = tempString + sCurrentLine;
+//			}
+// 
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		} finally {
+//			try {
+//				if (br != null)br.close();
+//			} catch (IOException ex) {
+//				ex.printStackTrace();
+//			}
+//		}
 //        
         // setup the properties
 //        final Properties props =
@@ -143,7 +143,7 @@ public class CodeChecker {
 //    	
     	
 
-    	return "[debug1] " + code + " " + tempString + " "+  "!";
+    	return "[debug1] Parse the code into our checker : \n " + code;
     }
 
     public String getResult() {

@@ -40,18 +40,18 @@ function loadCallback () {
 
 function enableButtons () {
 	// Set the onclick action for the first button
-	btn = document.getElementById("input_greet_generically");
-	btn.onclick= function(){greetGenerically();};
-	
-	// Update the button label now that the button is active
-	btn.value="Click me for a generic greeting";
-	
-	// Set the onclick action for the second button
-	btn = document.getElementById("input_greet_by_name");
-	btn.onclick=function(){greetByName();};
-	
-	// Update the button label now that the button is active
-	btn.value="Click me for a personal greeting";
+//	btn = document.getElementById("input_greet_generically");
+//	btn.onclick= function(){greetGenerically();};
+//	
+//	// Update the button label now that the button is active
+//	btn.value="Click me for a generic greeting";
+//	
+//	// Set the onclick action for the second button
+//	btn = document.getElementById("input_greet_by_name");
+//	btn.onclick=function(){greetByName();};
+//	
+//	// Update the button label now that the button is active
+//	btn.value="Click me for a personal greeting";
 	
 	btn = document.getElementById("btn_submit");
 	btn.value="Submit";
